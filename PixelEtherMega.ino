@@ -1,9 +1,7 @@
+// Pixel code for EtherMega and Shield
 
-<<<<<<< HEAD
-String today = "ERGO PixelEtherMega 2013-10-04";
-=======
 String today = "ERGO PixelEtherMega 2013-11-21";
->>>>>>> Dead Man and Analog
+
 // add trim to server response
 // add pinMode(10,OUTPUT); and digitalWrite(10,HIGH) for SD Card Fix.
 // Fixed the if else error return in state 7 2013-09-20
@@ -288,12 +286,12 @@ void loop()// Main Loop of the Pixel
 				GetString +="&";GetString += "wnR=";GetString +=  wnR;
 				GetString +="&";GetString += "towMsR=";GetString += towMsR;
 				GetString +="&";GetString += "towSubMsR=";GetString += towSubMsR;
-<<<<<<< HEAD
+
 				GetString +="&";GetString += "analog=";GetString += analog;
-=======
+
 				//GetString +="&";GetString += "analog=";GetString += analog;
 				GetString +="&";GetString += "analog=";GetString += numEvent;//  Temp change of analog field to test dead man.
->>>>>>> Dead Man and Analog
+
 				//GetString += " HTTP/1.0";
 				GetString += " HTTP/1.1";
 				//Serial.println(GetString);
@@ -313,14 +311,10 @@ void loop()// Main Loop of the Pixel
 			{
 				Serial.println("Connection to dB server failed Retrying.");
 				NextState = 1;
-<<<<<<< HEAD
-				Serial.println(freeMemory());
-=======
-				//Serial.println(freeMemory());
->>>>>>> Dead Man and Analog
-				delay(500);
-				//asm volatile ("  jmp 0");  
 
+				//Serial.println(freeMemory());
+
+				delay(500);
 			}
 		}
 		break;
@@ -335,32 +329,20 @@ void loop()// Main Loop of the Pixel
 					connectLoop = 0;// Server did respond so clear the loop counter
 					String ServerResponse;
 					ServerResponse = client.readStringUntil(0x0A);// Read server response until the first Line Feed
-<<<<<<< HEAD
-				 ServerResponse.toUpperCase();
-				 ServerResponse.trim();
-=======
+
 					ServerResponse.toUpperCase();
 					ServerResponse.trim();
->>>>>>> Dead Man and Analog
+
+
 					//Serial.print("Server Response: ");
 					//Serial.println(ServerResponse);
-				
-					if(ServerResponse == "HTTP/1.1 200 OK" )
-<<<<<<< HEAD
-				// if(ServerResponse.substring(1) == "OK" )
-				 
-					{
-						//Serial.println("found OK");
-						NextState = 4;// Finished processing one event go wait for next  event
-						delay(1000);
-=======
-						// if(ServerResponse.substring(1) == "OK" )
 
+					if(ServerResponse == "HTTP/1.1 200 OK" )				 
 					{
 						//Serial.println("found OK");
 						NextState = 4;// Finished processing one event go wait for next  event
 						wakeTheDead();// Pump up the Dead Man
->>>>>>> Dead Man and Analog
+
 						client.stop();
 					}
 					else
@@ -381,11 +363,11 @@ void loop()// Main Loop of the Pixel
 					Serial.println(F("Timeout"));
 					client.stop();
 					NextState = 1;// Time out so start from scratch
-<<<<<<< HEAD
-					Serial.println(freeMemory());
-=======
+
 					//Serial.println(freeMemory());
->>>>>>> Dead Man and Analog
+
+					//Serial.println(freeMemory());
+
 					delay(500);
 					//asm volatile ("  jmp 0");  
 				}

@@ -1,0 +1,34 @@
+<VisualMicro>
+  <Program Name="PixelEtherMega" Ext=".ino" Location="C:\Users\James Brown\Documents\Arduino\PixelEtherMega">
+    <Compile CompilerErrors="0" ConfigurationName="Debug" StopOnError="False" OptimiseLibs="True" OptimiseCore="True" BuildPath="C:\Users\James Brown\AppData\Local\VMicro\Arduino\Builds\PixelEtherMega\mega2560" IsDebugStart="1" SketchName="PixelEtherMega" ReportDigitalPins="0" ReportAnalogPins="0" ReportI2C="0" ReportFreeMemory="0" IncludeDebug="1" LastDebugPreProcessorDefinitions="VM_DEBUG;VM_DEBUG_ENABLE 1;VM_DEBUG_BANDWIDTH_THROTTLE_MS 80;VM_DEBUGGER_TYPE_HARDWARESERIAL 0;VM_DEBUGGER_TYPE_SOFTWARESERIAL 1;VM_DEBUGGER_TYPE_FASTSERIAL 2;VM_DEBUGGER_TYPE_USB 3;VM_DEBUGGER_TYPE_TEENSY 4;VM_DEBUGGER_TYPE_UART 5;VM_DEBUGGER_TYPE_USART 6;VM_DEBUGGER_TYPE_USBSERIAL 7;VM_DEBUGGER_TYPE VM_DEBUGGER_TYPE_HARDWARESERIAL;" IncludesDebug="1" IsCompiled="1" />
+    <Debug DebugMode="Full" DebugEnabled="1" />
+    <Platform Package="arduino" Platform="avr" Architecture="avr" Name="arduino10x">
+      <Board Name="mega2560" Description="Arduino Mega 2560 or Mega ADK" CoreFolder="C:\Program Files\arduino\hardware\arduino\cores\arduino" VariantFullPath="C:\Program Files\arduino\hardware\arduino\variants\mega" McuIdePath="C:\Program Files\arduino" McuSketchBookPath="C:\Users\James Brown\Documents\Arduino" name="Arduino Mega 2560 or Mega ADK" upload.protocol="wiring" upload.maximum_size="258048" upload.speed="115200" bootloader.low_fuses="0xFF" bootloader.high_fuses="0xD8" bootloader.extended_fuses="0xFD" bootloader.path="stk500v2" bootloader.file="stk500boot_v2_mega2560.hex" bootloader.unlock_bits="0x3F" bootloader.lock_bits="0x0F" build.mcu="atmega2560" build.f_cpu="16000000L" build.core="arduino" build.variant="mega" runtime.ide.path="C:\Program Files\arduino" build.system.path="C:\Program Files\arduino\hardware\arduino\system" runtime.ide.version="105" originalid="mega2560" build.core.vmresolved="C:\Program Files\arduino\hardware\arduino\cores\arduino" build.core.parentfolder.vmresolved="C:\Program Files\arduino\hardware\arduino\cores" build.core.coresparentfolder.vmresolved="C:\Program Files\arduino\hardware\arduino" vm.core.include="arduino.h" vm.boardsource.path="C:\Program Files\arduino\hardware\arduino" vm.platformname.name="avr" build.arch="AVR" ide.hint="Arduino 0023 and 1.0.x Ide" ide.location.key="Arduino" ide.location.ide.winreg="Arduino 1.0.x Application" ide.location.sketchbook.winreg="Arduino 1.0.x Sketchbook" ide.location.sketchbook.preferences="sketchbook.path" ide.location.sketchbook.default="%MYDOCUMENTS%\arduino" ide.location.preferences="%VM_APPDATA_ROAMING%\arduino\preferences.txt" ide.default.package="arduino" ide.default.platform="avr" ide.multiplatform="true" ide.includes="arduino.h" ide.platformswithoutpackage="true" ide.sketchfolder.platforms.exclude="avr" ide.includes.fallback="wprogram.h" ide.extension="ino" ide.extension.fallback="pde" ide.versionLTEQ="149" ide.exe="arduino.exe" ide.hosts="atmel" ide.url="http://arduino.cc/en/Main/Software" vm.debug="true" software="ARDUINO" ide.appid="arduino10x" location.sketchbook="C:\Users\James Brown\Documents\Arduino" build.variant.vmresolved="C:\Program Files\arduino\hardware\arduino\variants\mega" />
+    </Platform>
+    <VCCodeModel>
+      <VCCodeMacros />
+    </VCCodeModel>
+    <BreakPoints>
+      <BreakPoint Index="1" Name="PixelEtherMega.ino, line 337" Id="c4c0ef00-6043-4b35-9795-3703f225f7ef" Enabled="0" Message=". " MessageTextType="0" PreProcessedMessage=". " Condition="" ConditionType="1" CurrentHits="0" File="c:\users\james brown\documents\arduino\pixelethermega\pixelethermega.ino" FileLine="337" FileColumn="1" FunctionName="loop()" FunctionLineOffset="150" FunctionColumnOffset="1" HitCountTarget="1" HitCountType="1" Language="C++" LocationType="3" Tag="&lt;vmbp Id='c4c0ef00-6043-4b35-9795-3703f225f7ef'/&gt;" Type="1" ToString="System.__ComObject" BreakWhenHit="0">
+        <Source>330	
+331						if(ServerResponse == "HTTP/1.1 200 OK" )
+332							// if(ServerResponse.substring(1) == "OK" )
+333	
+334						{
+335							//Serial.println("found OK");
+336							NextState = 4;// Finished processing one event go wait for next  event
+--&gt;337							wakeTheDead();// Pump up the Dead Man
+338							client.stop();
+339						}
+340						else
+341						{
+342							Serial.println("Error response from server");
+343							NextState = 1;
+344							delay(1000);
+345							client.stop();
+346						}
+</Source>
+      </BreakPoint>
+    </BreakPoints>
+  </Program>
+</VisualMicro>
